@@ -1,11 +1,11 @@
 {
-  "name": "@graphql-yoga/apollo-link",
+  "name": "@graphql-yoga/apollo-sse-link",
   "version": "0.0.0",
   "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/dotansimha/graphql-yoga.git",
-    "directory": "packages/apollo-link"
+    "directory": "packages/apollo-sse-link"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -49,8 +49,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/url-loader": "7.12.4",
-    "@graphql-tools/utils": "8.8.0",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

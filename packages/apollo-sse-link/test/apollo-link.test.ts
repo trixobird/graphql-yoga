@@ -3,10 +3,9 @@ import { createYoga } from 'graphql-yoga'
 import { createServer } from 'http'
 import { parse } from 'graphql'
 import { observableToAsyncIterable } from '@graphql-tools/utils'
-import { YogaLink } from '../src'
-import { File } from '@whatwg-node/fetch'
+import { SSELink } from '../src'
 
-describe('Yoga Apollo Link', () => {
+describe('Apollo SSE Link', () => {
   const port = 4000 + Math.floor(Math.random() * 1000)
   const endpoint = '/graphql'
   const hostname = '127.0.0.1'
@@ -18,22 +17,13 @@ describe('Yoga Apollo Link', () => {
       typeDefs: /* GraphQL */ `
         scalar File
         type Query {
-          hello: String
-        }
-        type Mutation {
-          readFile(file: File!): String!
+          _: String
         }
         type Subscription {
           time: String
         }
       `,
       resolvers: {
-        Query: {
-          hello: () => 'Hello Apollo Client!',
-        },
-        Mutation: {
-          readFile: (_, args: { file: File }) => args.file.text(),
-        },
         Subscription: {
           time: {
             async *subscribe() {
@@ -49,32 +39,18 @@ describe('Yoga Apollo Link', () => {
     },
   })
   const server = createServer(yoga)
-  const url = `http://${hostname}:${port}${endpoint}`
+  const uri = `http://${hostname}:${port}${endpoint}`
   const client = new ApolloClient({
-    link: new YogaLink({
-      endpoint: url,
+    link: new SSELink({
+      uri,
     }),
     cache: new InMemoryCache(),
   })
   beforeAll(async () => {
     await new Promise<void>((resolve) => server.listen(port, hostname, resolve))
   })
-  afterAll(async () => {
-    await new Promise((resolve) => server.close(resolve))
-  })
-  it('should handle queries correctly', async () => {
-    const result = await client.query({
-      query: parse(/* GraphQL */ `
-        query Greetings {
-          hello
-        }
-      `),
-    })
-    expect(result.error).toBeUndefined()
-    expect(result.errors?.length).toBeFalsy()
-    expect(result.data).toEqual({
-      hello: 'Hello Apollo Client!',
-    })
+  afterAll(() => {
+    server.close()
   })
   it('should handle subscriptions correctly', async () => {
     const observable = client.subscribe({
@@ -99,21 +75,5 @@ describe('Yoga Apollo Link', () => {
       expect(date.getFullYear()).toBe(new Date().getFullYear())
     }
     expect(i).toBe(2)
-  })
-  it('should handle file uploads correctly', async () => {
-    const result = await client.mutate({
-      mutation: parse(/* GraphQL */ `
-        mutation readFile($file: File!) {
-          readFile(file: $file)
-        }
-      `),
-      variables: {
-        file: new File(['Hello World'], 'file.txt', { type: 'text/plain' }),
-      },
-    })
-    expect(result.errors?.length).toBeFalsy()
-    expect(result.data).toEqual({
-      readFile: 'Hello World',
-    })
   })
 })

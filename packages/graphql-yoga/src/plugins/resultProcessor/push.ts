@@ -39,9 +39,11 @@ export function processPushResult(
       const { done, value } = await iterator.next()
       if (value != null) {
         const chunk = JSON.stringify(value)
+        controller.enqueue(encodeString('event: data\n'))
         controller.enqueue(encodeString(`data: ${chunk}\n\n`))
       }
       if (done) {
+        controller.enqueue(encodeString(`event: complete\n\n`))
         controller.close()
       }
     },
