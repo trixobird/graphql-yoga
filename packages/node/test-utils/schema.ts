@@ -4,7 +4,7 @@ import {
   GraphQLString,
   GraphQLScalarType,
   GraphQLInt,
-} from 'graphql'
+} from '@graphql-tools/graphql'
 
 let counter = 0
 

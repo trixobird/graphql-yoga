@@ -143,7 +143,7 @@ import {
 } from '@apollo/client/core'
 import { split } from '@apollo/client/link/core'
 import { HttpLink } from '@apollo/client/link/http'
-import { print, getOperationAST } from 'graphql'
+import { print, getOperationAST } from '@graphql-tools/graphql'
 
 type SSELinkOptions = EventSourceInit & { uri: string }
 

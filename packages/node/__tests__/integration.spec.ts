@@ -1,4 +1,4 @@
-import { getIntrospectionQuery } from 'graphql'
+import { getIntrospectionQuery } from '@graphql-tools/graphql'
 import { useDisableIntrospection } from '@envelop/disable-introspection'
 import EventSource from 'eventsource'
 import request from 'supertest'

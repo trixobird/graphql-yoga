@@ -1,5 +1,5 @@
 import { isAsyncIterable } from '@envelop/core'
-import { ExecutionResult } from 'graphql'
+import { ExecutionResult } from '@graphql-tools/graphql'
 import { encodeString } from '../../encodeString.js'
 import { FetchAPI } from '../../types.js'
 import { ResultProcessorInput } from '../types.js'

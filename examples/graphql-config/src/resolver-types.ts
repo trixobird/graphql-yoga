@@ -1,4 +1,4 @@
-import { GraphQLResolveInfo } from 'graphql'
+import { GraphQLResolveInfo } from '@graphql-tools/graphql'
 export type Maybe<T> = T | null
 export type InputMaybe<T> = Maybe<T>
 export type Exact<T extends { [key: string]: unknown }> = {

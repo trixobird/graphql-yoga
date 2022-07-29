@@ -114,7 +114,7 @@ In Yoga v2 you have to leverage the `mapSchema` API from graphql-tools.
 import { Plugin, createServer } from '@graphql-yoga/node'
 import { mapSchema, getDirective, MapperKind } from '@graphql-tools/utils'
 import { makeExecuteableSchema } from '@graphql-tools/schema'
-import { defaultFieldResolver } from 'graphql'
+import { defaultFieldResolver } from '@graphql-tools/graphql'
 import { typeDefs, resolvers } from './schema'
 
 let schema = makeExecuteableSchema({

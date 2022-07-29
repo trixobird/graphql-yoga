@@ -1,5 +1,9 @@
 import { createGraphQLError } from '@graphql-tools/utils'
-import { OperationDefinitionNode, getOperationAST, GraphQLError } from 'graphql'
+import {
+  OperationDefinitionNode,
+  getOperationAST,
+  GraphQLError,
+} from '@graphql-tools/graphql'
 import { YogaInitialContext } from '../../types'
 import { Plugin } from '../types'
 

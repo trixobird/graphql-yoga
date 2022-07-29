@@ -7,7 +7,7 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
-} from 'graphql'
+} from '@graphql-tools/graphql'
 import { GraphQLBigInt } from 'graphql-scalars'
 import { GraphQLLiveDirective } from '@envelop/live-query'
 
@@ -17,6 +17,7 @@ export function createTestSchema() {
   return new GraphQLSchema({
     query: new GraphQLObjectType({
       name: 'Query',
+      // @ts-expect-error FOR NOW IGNORE ME
       fields: () => ({
         alwaysFalse: {
           type: GraphQLBoolean,
@@ -117,6 +118,7 @@ export function createTestSchema() {
         },
       }),
     }),
+    // @ts-expect-error FIX ME
     directives: [GraphQLLiveDirective],
   })
 }

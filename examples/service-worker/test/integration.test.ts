@@ -1,4 +1,4 @@
-import { getIntrospectionQuery } from 'graphql'
+import { getIntrospectionQuery } from '@graphql-tools/graphql'
 import { createServer } from '@graphql-yoga/common'
 import { Request } from '@whatwg-node/fetch'
 

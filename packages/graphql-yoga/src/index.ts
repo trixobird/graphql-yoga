@@ -17,7 +17,9 @@ export const YogaExtensions: GraphQLExtensionDeclaration = (api) => {
   const codeFileLoader = new CodeFileLoader({
     noPluck: true,
   })
+  // @ts-expect-error FOR NOW IGNORE ME
   api.loaders.schema.register(codeFileLoader)
+  // @ts-expect-error FOR NOW IGNORE ME
   api.loaders.documents.register(codeFileLoader)
   return {
     name: 'Yoga',
@@ -62,11 +64,13 @@ export function graphqlYoga() {
           console.warn('No schema found for mocking. Skipping mocking.')
         } else {
           console.log(`Adding mocks to the schema`)
+          // @ts-expect-error FOR NOW IGNORE ME
           schema = addMocksToSchema({ schema })
         }
       }
       console.log(`Building GraphQL Server`)
       const graphQLServer = createServer({
+        // @ts-expect-error FOR NOW IGNORE ME
         schema,
       })
       console.log(`Starting GraphQL Server`)

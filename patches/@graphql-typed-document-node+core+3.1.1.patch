@@ -1,0 +1,10 @@
+diff --git a/node_modules/@graphql-typed-document-node/core/dist/index.d.ts b/node_modules/@graphql-typed-document-node/core/dist/index.d.ts
+index 0a0e14c..413cc59 100644
+--- a/node_modules/@graphql-typed-document-node/core/dist/index.d.ts
++++ b/node_modules/@graphql-typed-document-node/core/dist/index.d.ts
+@@ -1,4 +1,4 @@
+-import { DocumentNode } from 'graphql';
++import { DocumentNode } from '@graphql-tools/graphql';
+ export interface TypedDocumentNode<Result = {
+     [key: string]: any;
+ }, Variables = {

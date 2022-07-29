@@ -1,6 +1,6 @@
 import { EnvelopError } from '@envelop/core'
 import { createGraphQLError } from '@graphql-tools/utils'
-import { GraphQLError } from 'graphql'
+import { GraphQLError } from '@graphql-tools/graphql'
 
 declare module 'graphql' {
   interface GraphQLHTTPErrorExtensions {

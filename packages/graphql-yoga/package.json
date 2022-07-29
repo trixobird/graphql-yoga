@@ -52,8 +52,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@graphql-tools/code-file-loader": "^7.3.0",
-    "@graphql-tools/mock": "^8.7.0",
+    "@graphql-tools/code-file-loader": "7.3.2-alpha-33fb2950.0",
+    "@graphql-tools/mock": "8.7.2-alpha-33fb2950.0",
     "@graphql-yoga/node": "^2.13.5",
     "graphql-config": "^4.1.0",
     "tslib": "^2.3.1",
@@ -63,7 +63,7 @@
     "@types/yargs": "17.0.10"
   },
   "peerDependencies": {
-    "graphql": "^15.2.0 || ^16.0.0"
+    "@graphql-tools/graphql": "@0.1.0-alpha-33fb2950.0"
   },
   "type": "module"
 }

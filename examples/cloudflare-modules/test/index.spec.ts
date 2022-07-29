@@ -1,6 +1,6 @@
 import worker from '../src/index.js'
 import { Request } from '@whatwg-node/fetch'
-import { getIntrospectionQuery } from 'graphql'
+import { getIntrospectionQuery } from '@graphql-tools/graphql'
 
 test('should render GraphiQL', async () => {
   // Note we're using Worker APIs in our test, without importing anything extra

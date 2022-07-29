@@ -1,4 +1,4 @@
-import { GraphQLSchema, isSchema, print } from 'graphql'
+import { GraphQLSchema, isSchema, print } from '@graphql-tools/graphql'
 import {
   GetEnvelopedFn,
   envelop,
@@ -513,14 +513,19 @@ export class YogaServer<
       for (const error of errors) {
         if (error.extensions?.http) {
           if (
+            // @ts-expect-error sometimes it be like that
             error.extensions.http.status &&
+            // @ts-expect-error sometimes it be like that
             error.extensions?.http.status > finalResponseInit.status
           ) {
+            // @ts-expect-error sometimes it be like that
             finalResponseInit.status = error.extensions.http.status
           }
+          // @ts-expect-error sometimes it be like that
           if (error.extensions.http.headers) {
             Object.assign(
               finalResponseInit.headers,
+              // @ts-expect-error sometimes it be like that
               error.extensions.http.headers,
             )
           }

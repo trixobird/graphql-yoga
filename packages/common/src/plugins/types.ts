@@ -1,5 +1,5 @@
 import { Plugin as EnvelopPlugin, PromiseOrValue } from '@envelop/core'
-import { ExecutionResult } from 'graphql'
+import { ExecutionResult } from '@graphql-tools/graphql'
 import { ExecutionPatchResult, FetchAPI, GraphQLParams } from '../types.js'
 
 export type Plugin<

@@ -1,4 +1,4 @@
-import { getOperationAST, ExecutionArgs } from 'graphql'
+import { getOperationAST, ExecutionArgs } from '@graphql-tools/graphql'
 import { RequestProcessContext } from './types.js'
 import { ResultProcessor } from './plugins/types.js'
 
