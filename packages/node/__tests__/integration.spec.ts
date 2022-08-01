@@ -13,7 +13,7 @@ import { createTestSchema } from './__fixtures__/schema.js'
 import { renderGraphiQL } from '@graphql-yoga/render-graphiql'
 import 'json-bigint-patch'
 import http from 'http'
-import { useLiveQuery } from '@envelop/live-query'
+// import { useLiveQuery } from '@envelop/live-query'
 import { InMemoryLiveQueryStore } from '@n1ru4l/in-memory-live-query-store'
 import { AbortController, fetch, File, FormData } from '@whatwg-node/fetch'
 import { Plugin } from '@graphql-yoga/common'
@@ -1024,9 +1024,9 @@ describe('Browser', () => {
     logging: false,
     endpoint,
     plugins: [
-      useLiveQuery({
-        liveQueryStore,
-      }),
+      // useLiveQuery({
+      //   liveQueryStore,
+      // }),
     ],
     renderGraphiQL,
   })

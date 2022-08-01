@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@apollo/gateway": "^0.51.0",
-    "@envelop/apollo-federation": "^2.4.0",
+    "@envelop/apollo-federation": "3.0.0-alpha-ccec0fc.0",
     "@graphql-yoga/node": "2.13.5",
     "graphql": "^16.5.0"
   }
