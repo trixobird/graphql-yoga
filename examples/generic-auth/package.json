@@ -19,7 +19,7 @@
     "typescript": "4.7.4"
   },
   "dependencies": {
-    "@envelop/generic-auth": "5.0.0-alpha-ccec0fc.0",
+    "@envelop/generic-auth": "5.0.0-alpha-7ed14a0a.0",
     "@graphql-yoga/node": "2.13.5",
     "graphql": "16.5.0"
   }

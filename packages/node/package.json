@@ -63,16 +63,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@envelop/core": "3.0.0-alpha-ccec0fc.0",
-    "@graphql-tools/utils": "8.9.1-alpha-e7752ba5.0",
+    "@envelop/core": "3.0.0-alpha-7ed14a0a.0",
+    "@graphql-tools/utils": "8.9.1-alpha-25f2d2c4.0",
     "@graphql-yoga/common": "^2.12.4",
     "@graphql-yoga/subscription": "^2.2.2",
     "@whatwg-node/fetch": "^0.2.6",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@envelop/disable-introspection": "4.0.0-alpha-ccec0fc.0",
-    "@envelop/live-query": "4.0.0-alpha-ccec0fc.0",
+    "@envelop/disable-introspection": "4.0.0-alpha-7ed14a0a.0",
+    "@envelop/live-query": "5.0.0-alpha-7ed14a0a.0",
     "@types/eventsource": "1.1.9",
     "@types/node": "16.11.46",
     "eventsource": "2.0.2",
@@ -81,7 +81,7 @@
     "puppeteer": "15.5.0"
   },
   "peerDependencies": {
-    "@graphql-tools/graphql": "0.1.0-alpha-e7752ba5.0"
+    "@graphql-tools/graphql": "0.1.0-alpha-25f2d2c4.0"
   },
   "type": "module"
 }

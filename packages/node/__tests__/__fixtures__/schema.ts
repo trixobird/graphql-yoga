@@ -9,7 +9,7 @@ import {
   GraphQLString,
 } from '@graphql-tools/graphql'
 import { GraphQLBigInt } from 'graphql-scalars'
-// import { GraphQLLiveDirective } from '@envelop/live-query'
+import { GraphQLLiveDirective } from '@envelop/live-query'
 
 export function createTestSchema() {
   let liveQueryCounter = 0
@@ -118,6 +118,6 @@ export function createTestSchema() {
         },
       }),
     }),
-    // directives: [GraphQLLiveDirective],
+    directives: [GraphQLLiveDirective],
   })
 }

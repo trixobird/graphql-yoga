@@ -64,12 +64,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@envelop/core": "3.0.0-alpha-ccec0fc.0",
-    "@envelop/parser-cache": "5.0.0-alpha-ccec0fc.0",
-    "@envelop/validation-cache": "5.0.0-alpha-ccec0fc.0",
+    "@envelop/core": "3.0.0-alpha-7ed14a0a.0",
+    "@envelop/parser-cache": "5.0.0-alpha-7ed14a0a.0",
+    "@envelop/validation-cache": "5.0.0-alpha-7ed14a0a.0",
     "@graphql-typed-document-node/core": "^3.1.1",
-    "@graphql-tools/schema": "8.5.2-alpha-e7752ba5.0",
-    "@graphql-tools/utils": "8.9.1-alpha-e7752ba5.0",
+    "@graphql-tools/schema": "8.5.2-alpha-25f2d2c4.0",
+    "@graphql-tools/utils": "8.9.1-alpha-25f2d2c4.0",
     "@graphql-yoga/subscription": "^2.2.2",
     "@whatwg-node/fetch": "^0.2.6",
     "dset": "^3.1.1",
@@ -80,7 +80,7 @@
     "html-minifier-terser": "7.0.0-beta.0"
   },
   "peerDependencies": {
-    "@graphql-tools/graphql": "0.1.0-alpha-e7752ba5.0"
+    "@graphql-tools/graphql": "0.1.0-alpha-25f2d2c4.0"
   },
   "type": "module"
 }

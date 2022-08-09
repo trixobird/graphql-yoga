@@ -35,7 +35,7 @@
 		"vite": "2.9.14"
 	},
 	"dependencies": {
-		"@envelop/graphql-jit": "5.0.0-alpha-ccec0fc.0",
+		"@envelop/graphql-jit": "5.0.0-alpha-7ed14a0a.0",
 		"@graphql-yoga/common": "2.12.4",
 		"graphql": "16.5.0"
 	},
