@@ -7,9 +7,13 @@ import {
   GraphQLObjectType,
   GraphQLSchema,
   GraphQLString,
+  GraphQLScalarType,
 } from '@graphql-tools/graphql'
-import { GraphQLBigInt } from 'graphql-scalars'
+import { GraphQLBigInt as GraphQLJSBigInt } from 'graphql-scalars'
 import { GraphQLLiveDirective } from '@envelop/live-query'
+
+// @ts-expect-error this is okay since Config is compat between both
+export const GraphQLBigInt = new GraphQLScalarType(GraphQLJSBigInt.toConfig())
 
 export function createTestSchema() {
   let liveQueryCounter = 0
@@ -17,7 +21,6 @@ export function createTestSchema() {
   return new GraphQLSchema({
     query: new GraphQLObjectType({
       name: 'Query',
-      // @ts-expect-error FOR NOW IGNORE ME
       fields: () => ({
         alwaysFalse: {
           type: GraphQLBoolean,
