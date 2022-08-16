@@ -59,7 +59,10 @@ export function usePreventMutationViaGET(): Plugin<YogaInitialContext> {
           throw result
         }
 
-        assertMutationViaGet(request.method, result, operationName)
+        // Run if it is a Yoga request
+        if (request != null) {
+          assertMutationViaGet(request.method, result, operationName)
+        }
       }
     },
   }

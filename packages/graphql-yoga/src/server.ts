@@ -182,7 +182,7 @@ export class YogaServer<
     TUserContext & TServerContext & YogaInitialContext
   >
   public logger: YogaLogger
-  protected graphqlEndpoint: string
+  readonly graphqlEndpoint: string
   public fetchAPI: FetchAPI
   protected plugins: Array<
     Plugin<TUserContext & TServerContext & YogaInitialContext, TServerContext>
@@ -454,7 +454,10 @@ export class YogaServer<
       if (result == null) {
         const initialContext = {
           request,
-          ...params,
+          query: params.query,
+          operationName: params.operationName,
+          variables: params.variables,
+          extensions: params.extensions,
           ...serverContext,
         }
 
