@@ -25,6 +25,7 @@ function headersToObj(headers: Headers) {
 
 export function usePrometheus(
   options: PrometheusTracingPluginConfig,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Plugin<any> {
   const endpoint = options.endpoint || '/metrics'
   const registry = options.registry || defaultRegistry
