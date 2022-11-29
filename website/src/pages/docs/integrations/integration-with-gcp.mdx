@@ -30,7 +30,11 @@ export const yoga = createYoga({
     }
   }),
   // This needs to be set because GCP doesn't expose the real path
-  graphqlEndpoint: '/'
+  graphqlEndpoint: '/',
+  graphiql: {
+    // Here you should set the actual endpoint to make GraphiQL work properly
+    endpoint: `/yoga`
+  }
 })
 ```
 

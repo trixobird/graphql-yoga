@@ -9,6 +9,10 @@ export function shouldRenderGraphiQL({ headers, method }: Request): boolean {
 
 export type GraphiQLOptions = {
   /**
+   * The endpoint to send the GraphQL requests to.
+   */
+  endpoint?: string
+  /**
    * An optional GraphQL string to use when no query is provided and no stored
    * query exists from a previous session.  If undefined is provided, GraphiQL
    * will use its own default query.
@@ -50,14 +54,9 @@ export type GraphiQLOptions = {
   additionalHeaders?: Record<string, string>
 }
 
-export type GraphiQLRendererOptions = {
-  /**
-   * The endpoint requests should be sent. Defaults to `"/graphql"`.
-   */
-  endpoint: string
-} & GraphiQLOptions
+export type GraphiQLRendererOptions = GraphiQLOptions;
 
-export const renderGraphiQL = (opts: GraphiQLRendererOptions) =>
+export const renderGraphiQL = (opts: GraphiQLOptions) =>
   graphiqlHTML
     .replace('__TITLE__', opts?.title || 'Yoga GraphiQL')
     .replace('__OPTS__', JSON.stringify(opts ?? {}))

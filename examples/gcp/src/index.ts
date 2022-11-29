@@ -16,4 +16,7 @@ export const yoga = createYoga({
   }),
   // Due to the missing information about the actual path from GCP, we need to set it to `/`
   graphqlEndpoint: '/',
+  graphiql: {
+    endpoint: '/yoga',
+  }
 })
