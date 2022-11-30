@@ -12,30 +12,36 @@ It is easy to use GraphQL Yoga with GCP.
 ## Usage
 
 ```js
-// index.js
 import { createSchema, createYoga } from 'graphql-yoga'
 
-// The exported variable name should be the same with `Entry point` value defined in Cloud Functions configuration
-export const yoga = createYoga({
+// This is the endpoint of your GCP function
+// Usually it is https://<region>-<project-id>.cloudfunctions.net/<function-name>
+// We assume that your function name is `graphql`
+const graphqlEndpoint = '/graphql'
+
+const yoga = createYoga({
   schema: createSchema({
-    typeDefs: `
+    typeDefs: /* GraphQL */ `
       type Query {
-        hello: String!
+        greetings: String
       }
     `,
     resolvers: {
       Query: {
-        hello: () => 'Hello world!'
+        greetings: () =>
+          'This is the `greetings` field of the root `Query` type'
       }
     }
   }),
-  // This needs to be set because GCP doesn't expose the real path
-  graphqlEndpoint: '/',
-  graphiql: {
-    // Here you should set the actual endpoint to make GraphiQL work properly
-    endpoint: `/yoga`
-  }
+  graphqlEndpoint
 })
+
+// The exported variable name should be the same with `Entry point` value defined in Cloud Functions configuration
+export function graphql(req, res) {
+  // GCP doesn't expose the full path so we need to patch it
+  req.url = graphqlEndpoint + req.url
+  return yoga(req, res)
+}
 ```
 
 <Callout>
