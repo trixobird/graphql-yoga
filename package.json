@@ -103,13 +103,14 @@
     "patchedDependencies": {
       "@changesets/assemble-release-plan@5.2.1": "patches/@changesets__assemble-release-plan@5.2.1.patch",
       "@graphiql/react@0.13.3": "patches/@graphiql__react@0.13.3.patch",
-      "formdata-node@4.4.1": "patches/formdata-node@4.4.1.patch",
       "nextra-theme-docs@2.0.0-beta.43": "patches/nextra-theme-docs@2.0.0-beta.43.patch"
     },
     "overrides": {
       "graphql": "16.6.0",
       "@envelop/core": "3.0.4",
-      "@changesets/assemble-release-plan": "5.2.1"
+      "@changesets/assemble-release-plan": "5.2.1",
+      "@whatwg-node/server": "0.5.1-alpha-20221228115139-6b81aa1",
+      "@whatwg-node/fetch": "0.5.4-alpha-20221228115139-6b81aa1"
     }
   }
 }
